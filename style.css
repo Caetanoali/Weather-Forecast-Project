@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    /*Exportamos a fonte que iamos usar e zeramos os valores da pagina*/
+    font-family: 'Poppins', sans-serif; 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+    /*Estruturando o Body no geral*/
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(#0f26a9, #93359e);
+}
+
+    /*Estilizando a primeira div, principal onde tudo vai estar*/
+#container {
+    background-color: #f0f8ff;
+    border-radius: 1rem;
+    padding: 1rem;
+    box-shadow: 5px 5px 5px rgpa(0, 0, 0, 0.1);
+}
+
+    /*Usamos os id ao inves das classes para poder estilizar as proximas divs*/
+    /*Essa estiliza a caixa de pesquisa acima de tudo*/
+#search {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 0.1rem solid #bdbdbd;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+}
+
+    /*Estilizando o input onde o usuario vai digitar os nomes das cidades que deseja buscar*/
+#search input {
+    border: none; 
+    background-color: transparent; /*Foi necessario para que ficasse visualmente bonito*/
+    font-size: 1rem;
+    width: 100%;
+
+}
+
+    /*Retira o foco, uma borda preta ao redor do input quando o mouse clica sobre ele para digitar*/
+#search input:focus-visible {
+    outline: none;
+}
+
+    /*Estiliza o botton de pesquisa*/
+#search button {
+    background-color: transparent; /*Como estamos usando os Icons temos que deixa-los transparentes para que fiquem visualmente bonitos*/
+    border: none;
+    cursor: pointer;
+    padding: 0.2rem;
+}
+
+    /*Estilização das Divs seguintes usando os id*/
+#weather {
+    display: none;
+    margin-top: 1.2rem;
+}
+
+#weather.show {
+    display: block;
+}
+
+#weather_title {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-weight:600;
+    color: #372f3f;
+}
+
+#temp {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 1rem;
+    background: linear-gradient(90deg, #0a3cba, #b205cc);
+    color: #ffff;
+    border-radius: 1rem;
+    padding: 0.2rem;
+    box-shadow: 0px 0px 5px rgba(0,0,0, 1);;
+}
+
+    /*Usado o Filter para que a sombra fique ao redor da imagem, caso contrario ficaria em forma de quadrado*/
+#temp_img {
+    filter: drop-shadow(2px 2px 2px rgba(0,0,0, 1));
+}
+
+    /*Estilização das Divs seguintes*/
+#temp_value {
+    font-weight: bold;
+    font-size: 2.8rem;
+    line-height: 3rem;
+}
+
+#temp_descripton {
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+#other_infos {
+    margin-top: 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+#other_infos .info {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding: 0.5rem;
+    border-radius: 1rem;
+    box-shadow: 0px 0px 5px rgba(0,0,0, 0.5);
+    background-color: #ffff;
+    gap: 0.4rem;
+}
+
+#other_infos .info h2 {
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+    /*Estilização dos icons*/
+#other_infos .info i {
+    font-size: 1rem;
+    width: 20%;
+    text-align: center;
+}
+
+    /*Coloração dos icons*/
+#temp_max_icon {
+    color: #7f1d1d;
+}
+
+#temp_min_icon {
+    color: #0284c7;
+}
+
+#humidity_icon {
+    color: #0ea5a9;
+}
+
+#wind_icon {
+    color: #7c3aed;
+}
+
+#alert img {
+    width: 10rem;
+    margin-top: 1.5rem;
+}
+
+    /*Estilização do alerta criado em Html para ser usado em Javascript*/
+#alert {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0.8rem;
+}
+
+/* Estiliza o rodapé da página */
+footer {
+    background-color: #3b3b3b; /* Cor de fundo do rodapé */
+    color: #ffffff; /* Cor do texto */
+    text-align: center; /* Alinha o texto ao centro */
+    padding: 0; /* Espaçamento interno */
+    margin: auto;
+    width: 100%; /* Largura total da página */
+    height: auto;
+    position: absolute; /* Posiciona o rodapé */
+    bottom: 0; /* Alinha ao fundo da página */
+    font-size: 1rem; /* Tamanho da fonte */
+}

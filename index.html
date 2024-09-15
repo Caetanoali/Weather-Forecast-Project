@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style/style.css">
+    <title>Weather Forecast</title>
+</head>
+
+<body>
+    <!--Usando a div de container para separação dos itens do Form-->
+    <!--Foi usado os Id ao inves de classes para facilitar o Javascript-->
+    <div id="container">
+        <form id="search">
+            <i class="fa-solid fa-location-dot"></i> <!--Foi usado Font Awesome para utilização dos icons (i)-->
+            <input type="search" name="city_name" id="city_name" placeholder="Procurar Cidade">
+            <button type="submit">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+        </form>
+
+        <div id="weather"> <!--Divs usadas para estruturar o esqueleto do que posteriormente foi otimizado no Javascript-->
+            <!--Os id foram usados para vincular com os dados do Javascrip na API-->
+            <h1 id="title">Barra Mansa, BR</h1>
+            <div id="infos">
+
+                <div id="temp"> <!--Div das temperaturas/imagens-->
+                    <img id="temp_img" src="http://openweathermap.org/img/wn/04d@2x.png" alt="">
+                
+                    <div> <!--Div dos valores das temperaturas e da descrição-->
+                        <p id="temp_value">
+                            32 <sup>ºC</sup>
+                        </p>
+    
+                        <p id="temp_description">
+                            Ensolarado
+                        </p>
+                    </div>
+                </div>
+
+                <div id="other_infos"> <!--Div das outras informações, que aparecem como cartões menores abaixo do principal-->
+
+                    <div class="info"> <!--Temperatura Maxima-->
+                        <i id="temp_max_icon" class="fa-solid fa-temperature-high"></i>
+                        <div>
+                            <h2>Temp. Max</h2> <!--Valor da temperatura maxima-->
+                            <p id="temp_max">
+                                32 
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="info"> <!--Temperatura Minima-->
+                        <i id="temp_min_icon" class="fa-solid fa-temperature-low"></i>
+                        <div>
+                            <h2>Temp. Min</h2> <!--Valor da temperatura minima-->
+                            <p id="temp_min">
+                                12 <sup>ºC</sup>
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="info"> <!--Umidade-->
+                        <i id="humidity_icon" class="fa-solid fa-droplet"></i>
+                        <div>
+                            <h2>Umidade</h2> <!--Valor da Umidade-->
+                            <p id="humidity">
+                                50%
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="info"> <!--Vento-->
+                        <i id="wind_icon" class="fa-solid fa-wind"></i>
+                        <div>
+                            <h2>Vento</h2> <!--Valor do Vento-->
+                            <p id="wind">
+                                50 km/hr
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="alert">
+            <!--criado para ser usado/vinculado com o java-->
+        </div>
+    </div>
+
+    <footer> <!--Roda pé da pagina / pessoalmente gosto de colocar-->
+        <p>Weather Forecast Project</p>
+        <p>Contato: alissonriios@outlook.com</p>
+    </footer>
+
+    <script src="javascript/script.js"></script>
+
+</body>
+
+</html>
